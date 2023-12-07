@@ -16,13 +16,12 @@ const TagDetails = async ({ params, searchParams }: URLProps) => {
   return (
     <>
       <h1 className="h1-bold text-dark100_light900">{result.tagTitle}</h1>
-
       <div className="mt-11 w-full">
         <LocalSearchBar
           route={`/tags/${params.id}`}
           iconPosition="left"
           imgSrc="/assets/icons/search.svg"
-          placeholder="Search for questions"
+          placeholder="Rechercher une question"
           otherClasses="flex-1"
         />
       </div>
@@ -44,12 +43,10 @@ const TagDetails = async ({ params, searchParams }: URLProps) => {
           ))
         ) : (
           <NoResult
-            title="Theres no tag question to show"
-            description="Be the first to break the silence! 🚀 Ask a Question and kickstart the
-          discussion. Your query could be the next big thing others learn from.
-          Get involved! 💡"
+            title="Pas encore de hashtags à afficher ..."
+            description="Soyez le premier à briser le silence ! 🌿 Posez une question et lancez la discussion. Votre interrogation pourrait être la prochaine grande avancée dont d'autres pourront s'inspirer. Impliquez-vous ! 💡"
             link="/ask-question"
-            linkTitle="Ask Question"
+            linkTitle="Poser une Question"
           />
         )}
       </div>

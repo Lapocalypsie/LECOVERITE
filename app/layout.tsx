@@ -19,9 +19,9 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Overflow",
+  title: "L'eco Vérité",
   description:
-    "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate withe developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    "L'application qui vous permet de voir plus clair sur les options écologiques qui s'offrent à vous, et découvrez qu'un futur positif est à notre portée!",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         <ClerkProvider
           appearance={{

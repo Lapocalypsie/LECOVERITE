@@ -10,9 +10,9 @@ import Pagination from "@/components/shared/Pagination";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Community | Dev Overflow",
+  title: "Communauté | Eco-Vérité",
   description:
-    "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate withe developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    "Une plateforme communautaire dédiée à poser et répondre à des questions sur le changement climatique et la durabilité environnementale. Obtenez de l'aide, partagez vos connaissances et collaborez avec d'autres Econautes du monde entier. Explorez des sujets liés à la science du climat, aux pratiques durables, aux politiques environnementales et bien plus encore.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -27,14 +27,14 @@ const Community = async ({ searchParams }: SearchParamsProps) => {
 
   return (
     <>
-      <h1 className="h1-bold text-dark100_light900">All Users</h1>
+      <h1 className="h1-bold text-dark100_light900">Tout nos éconautes</h1>
 
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
         <LocalSearchBar
           route="/community"
           iconPosition="left"
           imgSrc="/assets/icons/search.svg"
-          placeholder="Search for amazing minds"
+          placeholder="Découvrir les sauveurs de la planète ..."
           otherClasses="flex-1"
         />
 
@@ -46,13 +46,15 @@ const Community = async ({ searchParams }: SearchParamsProps) => {
 
       <section className="mt-12 flex flex-wrap gap-4">
         {result.users.length > 0 ? (
-          result.users.map((user) => <UserCard key={user._id} user={user} />)
+          result.users.map((user: any) => (
+            <UserCard key={user._id} user={user} />
+          ))
         ) : (
           <div className="paragraph-regular text-dark200_light800 mx-auto max-w-4xl text-center">
-            <p>No users yet!</p>
+            <p>{"Pas encore d'énonaute 😔"}</p>
 
             <Link href="/sign-up" className="mt-1 font-bold text-accent-blue">
-              Join to be the first!
+              Enregistrez vous pour être le premier éconautes!
             </Link>
           </div>
         )}

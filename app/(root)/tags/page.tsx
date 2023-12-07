@@ -10,9 +10,9 @@ import Pagination from "@/components/shared/Pagination";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tags | Dev Overflow",
+  title: "Tags | L'eco Vérité",
   description:
-    "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate withe developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    "Une plateforme communautaire axée sur Ecoverite pour poser et répondre à des questions. Obtenez de l'aide, partagez vos connaissances et collaborez avec des passionnés du monde entier. Explorez des sujets liés à l'écologie, la durabilité, les pratiques respectueuses de l'environnement, et bien plus encore.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -27,14 +27,14 @@ const Tags = async ({ searchParams }: SearchParamsProps) => {
 
   return (
     <>
-      <h1 className="h1-bold text-dark100_light900">All Tags</h1>
+      <h1 className="h1-bold text-dark100_light900">Tout les Tags</h1>
 
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
         <LocalSearchBar
           route="/tags"
           iconPosition="left"
           imgSrc="/assets/icons/search.svg"
-          placeholder="Search for tags"
+          placeholder="Rechercher des tags ..."
           otherClasses="flex-1"
         />
 
@@ -46,7 +46,7 @@ const Tags = async ({ searchParams }: SearchParamsProps) => {
 
       <section className="mt-12 flex flex-wrap gap-4">
         {result.tags.length > 0 ? (
-          result.tags.map((tag) => (
+          result.tags.map((tag: any) => (
             <Link
               href={`/tags/${tag._id}`}
               key={tag._id}

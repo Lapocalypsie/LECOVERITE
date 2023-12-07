@@ -9,22 +9,22 @@ export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/home.svg",
     route: "/",
-    label: "Home",
+    label: "Accueil",
   },
   {
     imgURL: "/assets/icons/users.svg",
     route: "/community",
-    label: "Community",
+    label: "Communauté",
+  },
+  {
+    imgURL: "/assets/icons/hamburger.svg",
+    route: "/collection",
+    label: "Articles",
   },
   {
     imgURL: "/assets/icons/star.svg",
-    route: "/collection",
-    label: "Collections",
-  },
-  {
-    imgURL: "/assets/icons/suitcase.svg",
     route: "/jobs",
-    label: "Find Jobs",
+    label: "Jeux",
   },
   {
     imgURL: "/assets/icons/tag.svg",
@@ -34,12 +34,12 @@ export const sidebarLinks: SidebarLink[] = [
   {
     imgURL: "/assets/icons/user.svg",
     route: "/profile",
-    label: "Profile",
+    label: "Profil",
   },
   {
     imgURL: "/assets/icons/question.svg",
     route: "/ask-question",
-    label: "Ask a question",
+    label: "Poser une question",
   },
 ];
 

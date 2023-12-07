@@ -16,9 +16,9 @@ import type { Metadata } from "next";
 import { auth } from "@clerk/nextjs";
 
 export const metadata: Metadata = {
-  title: "Home | Dev Overflow",
+  title: "L'eco Vérité | Accueil ",
   description:
-    "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate withe developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
+    "L'application qui vous permet de voir plus clair sur les options écologiques qui s'offrent à vous, et découvrez qu'un futur positif est à notre portée!",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -52,11 +52,13 @@ export default async function Home({ searchParams }: SearchParamsProps) {
   return (
     <>
       <div className="flex w-full flex-col-reverse justify-between gap-4 sm:flex-row sm:items-center">
-        <h1 className="h1-bold text-dark100_light900">All Questions</h1>
+        <h1 className="h1-bold text-dark100_light900">
+          Les questions de nos éconautes
+        </h1>
 
         <Link href="/ask-question" className="flex justify-end max-sm:w-full">
           <Button className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900">
-            Ask a Question
+            Poser une Question
           </Button>
         </Link>
       </div>
@@ -66,7 +68,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
           route="/"
           iconPosition="left"
           imgSrc="/assets/icons/search.svg"
-          placeholder="Search for questions"
+          placeholder="Rechercher une question ..."
           otherClasses="flex-1"
         />
 
@@ -81,7 +83,7 @@ export default async function Home({ searchParams }: SearchParamsProps) {
 
       <div className="mt-10 flex w-full flex-col gap-6">
         {result.questions.length > 0 ? (
-          result.questions.map((question) => (
+          result.questions.map((question: any) => (
             <QuestionCard
               key={question._id}
               _id={question._id}
@@ -96,12 +98,10 @@ export default async function Home({ searchParams }: SearchParamsProps) {
           ))
         ) : (
           <NoResult
-            title="Theres no question to show"
-            description="Be the first to break the silence! 🚀 Ask a Question and kickstart the
-          discussion. Your query could be the next big thing others learn from.
-          Get involved! 💡"
+            title="Une graine est-elle entrain de germer ? 🌱"
+            description="Soyez le premier à briser le silence ! 🌿 Posez une question et lancez la discussion. Votre interrogation pourrait être la prochaine grande avancée dont d'autres pourront s'inspirer. Impliquez-vous ! 💡"
             link="/ask-question"
-            linkTitle="Ask Question"
+            linkTitle="Poser une question"
           />
         )}
       </div>
