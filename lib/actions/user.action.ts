@@ -94,10 +94,11 @@ export async function deleteUser(params: DeleteUserParams) {
     }
 
     // Delete User Questions
+    // @ts-ignore
     await Question.deleteMany({ author: user.id });
 
     // @todo -> delete user answers, comments, etc
-
+    // @ts-ignore
     const deletedUser = await User.findByIdAndDelete(user._id);
 
     return deletedUser;
