@@ -14,4 +14,4 @@ Here is a working live demo: https://final-overflow.vercel.app
 
 La feuille, le bouteille d'eau et la planète visibles sur les onglets accueil, communauté et tags sonc cliquables
 Le Charlie de "Où es Charlie" est trouvable en terminant le quizz et en exécutant le code konami sur cette page
-
+Essayez de taper dans l'onglet "les questions de nos éconautes" la mannschaft

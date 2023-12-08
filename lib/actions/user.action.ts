@@ -34,6 +34,25 @@ export async function getUserById(params: any) {
   }
 }
 
+export async function getUsersByIds(IDs: string[]) {
+  try {
+    connectToDatabase();
+
+    const users = [];
+
+    for (const ID of IDs) {
+      const user = await User.findOne({ clerkId: ID });
+      if (user) {
+        users.push(user);
+      }
+    }
+
+    return users;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function createUser(userData: CreateUserParams) {
   try {
     connectToDatabase();
