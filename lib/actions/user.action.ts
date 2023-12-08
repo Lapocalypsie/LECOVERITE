@@ -94,7 +94,7 @@ export async function deleteUser(params: DeleteUserParams) {
     }
 
     // Delete User Questions
-    await Question.deleteMany({ author: user._id });
+    await Question.deleteMany({ author: user.id });
 
     // @todo -> delete user answers, comments, etc
 
