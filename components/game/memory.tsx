@@ -82,7 +82,6 @@ const Memory = () => {
             Reset
           </button>
         </div>
-        {/* Affichage du message de victoire */}
         {gameOver && (
           <div className="text-4xl font-bold text-green-500">
             Bravo, vous avez gagné !

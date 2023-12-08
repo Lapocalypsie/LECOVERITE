@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState, useRef } from "react";
 import * as z from "zod";
 import { useRouter, usePathname } from "next/navigation";
@@ -90,7 +89,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
         if (tagValue.length > 15) {
           return form.setError("tags", {
             type: "required",
-            message: "Tag must be less than 15 characters.",
+            message: "La balise doit comporter moins de 15 caractères.",
           });
         }
 
@@ -123,7 +122,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col">
               <FormLabel className="paragraph-semibold text-dark400_light800">
-                Question Title <span className="text-primary-500">*</span>
+                Titre de la question <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">
                 <Input
@@ -132,8 +131,9 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Be specific and imagine you&apos;re asking a question to another
-                person.
+                {
+                  "Ne soyez pas timide ! C'est par de petite chose que de grande chose se réalisent "
+                }
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -146,7 +146,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col gap-3">
               <FormLabel className="paragraph-semibold text-dark400_light800">
-                Detailed Explanation of Your Problem{" "}
+                Partagez nous vos sentiments et vos questions!{" "}
                 <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">
@@ -190,8 +190,8 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                 />
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Introduce the problem and expand on what you put in the title.
-                Minimum 20 characters.
+                Présentez le problème et développez ce que vous avez mis dans le
+                titre. Minimum 20 caractères.
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -204,7 +204,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
           render={({ field }) => (
             <FormItem className="flex w-full flex-col">
               <FormLabel className="paragraph-semibold text-dark400_light800">
-                Tags <span className="text-primary-500">*</span>
+                Balises <span className="text-primary-500">*</span>
               </FormLabel>
               <FormControl className="mt-3.5">
                 <>
@@ -212,7 +212,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                     disabled={type === "Edit"}
                     className="no-focus paragraph-regular background-light900_dark300 light-border-2 text-dark300_light700 min-h-[56px] border"
                     onKeyDown={(e) => handleInputKeyDown(e, field)}
-                    placeholder="Add tags..."
+                    placeholder="Ajouter des balises..."
                   />
 
                   {field.value.length > 0 && (
@@ -231,7 +231,7 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                           {type !== "Edit" && (
                             <Image
                               src="/assets/icons/close.svg"
-                              alt="Close Icon"
+                              alt="Icône de fermeture"
                               width={12}
                               height={12}
                               className="cursor-pointer object-contain invert-0 dark:invert"
@@ -244,8 +244,8 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
                 </>
               </FormControl>
               <FormDescription className="body-regular mt-2.5 text-light-500">
-                Add up to 3 tags to describe what your question is about. You
-                need to press enter to add a tag.
+                Ajoutez jusqu'à 3 balises pour décrire de quoi parle votre
+                question. Vous devez appuyer sur Entrée pour ajouter une balise.
               </FormDescription>
               <FormMessage className="text-red-500" />
             </FormItem>
@@ -257,9 +257,9 @@ const Question = ({ mongoUserId, type, questionDetails }: Props) => {
           disabled={isSubmitting}
         >
           {isSubmitting ? (
-            <>{type === "Edit" ? "Editing..." : "Posting..."}</>
+            <>{type === "Edit" ? "Édition en cours..." : "Publication..."}</>
           ) : (
-            <>{type === "Edit" ? "Edit Question" : "Ask a Question"}</>
+            <>{type === "Edit" ? "Éditer la question" : "Poser une question"}</>
           )}
         </Button>
       </form>
