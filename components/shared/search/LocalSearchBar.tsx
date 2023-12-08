@@ -31,13 +31,16 @@ const LocalSearchBar = ({
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       if (search) {
-        const newUrl = formUrlQuery({
+        if (search.toLowerCase() === "mannschaft"){
+          router.push("/mannschaft")
+        }
+        else {const newUrl = formUrlQuery({
           params: searchParams.toString(),
           key: "q",
           value: search,
-        });
-
+        })
         router.push(newUrl, { scroll: false });
+      }
       } else {
         if (pathname === route) {
           const newUrl = removeKeysFromQuery({

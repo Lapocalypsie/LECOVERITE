@@ -55,7 +55,14 @@ export default async function Home({ searchParams }: SearchParamsProps) {
         <h1 className="h1-bold text-dark100_light900">
           Les questions de nos éconautes
         </h1>
-
+        <Link href="https://www.nationalgeographic.fr/sciences/environnement-automne-conseil-tip-cette-annee-ne-ramassez-pas-les-feuilles-mortes" passHref>
+            <img
+              src="/assets/images/site-logo.svg" 
+              alt="Feuilles Mortes"
+              style={{ cursor: 'pointer' }}
+            />
+            <h1>feuille</h1>
+        </Link>
         <Link href="/ask-question" className="flex justify-end max-sm:w-full">
           <Button className="primary-gradient min-h-[46px] px-4 py-3 !text-light-900">
             Poser une Question

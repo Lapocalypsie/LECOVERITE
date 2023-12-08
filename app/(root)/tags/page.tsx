@@ -27,8 +27,18 @@ const Tags = async ({ searchParams }: SearchParamsProps) => {
 
   return (
     <>
+    <div className = "flex w-full flex-col-reverse justify-between gap-4 sm:flex-row ">
       <h1 className="h1-bold text-dark100_light900">Tout les Tags</h1>
-
+      <Link href="https://eaumineralenaturelle.fr/bouteille-eau/recyclage-des-bouteilles" passHref>
+            <img
+              width={50}
+              src="/assets/images/bouteille-eau.jpg" 
+              alt="Eau"
+              style={{ cursor: 'pointer' }}
+            />
+            <h1>Eau</h1>
+        </Link>
+      </div>
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
         <LocalSearchBar
           route="/tags"

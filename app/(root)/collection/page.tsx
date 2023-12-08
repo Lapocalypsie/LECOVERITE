@@ -2,17 +2,13 @@ import CardArticle from "@/components/articles/articleCard";
 
 export default function Page() {
   return (
-    <div>
-      <h1 className="mt-10 text-center text-4xl font-bold">
-        Quelques articles pour vous informer
-      </h1>
-      <div className="ml-24 mt-11 flex flex-wrap items-center gap-4 max-sm:flex-col sm:items-center">
-        <CardArticle
-          link="https://reseauactionclimat.org/comprendre-urgence/"
-          imageName="/assets/images/waterlevel.jpg"
-          title="Comprendre l'urgence climatique"
-          description="Notre système climatique repose sur un équilibre très fragile. Cet équilibre est mis en danger par les émissions de gaz à effet de serre liées aux activités humaines."
-        />
+    <div className="mt-11 flex flex-wrap gap-4 max-sm:flex-col sm:items-center">
+      <CardArticle
+        link="https://reseauactionclimat.org/comprendre-urgence/"
+        imageName="/assets/images/waterlevel.jpg"
+        title="Comprendre l'urgence climatique"
+        description="Notre système climatique repose sur un équilibre très fragile. Cet équilibre est mis en danger par les émissions de gaz à effet de serre liées aux activités humaines."
+      />
 
         <CardArticle
           link="https://reseauactionclimat.org/6e-rapport-du-giec-quelles-solutions-face-au-changement-climatique/"
@@ -70,6 +66,5 @@ export default function Page() {
           description="La lutte contre le dérèglement climatique est l’un des défis majeurs du XXIe siècle, tant elle appelle à des transformations profondes des sociétés, des territoires et de l’économie mondiale."
         />
       </div>
-    </div>
   );
 }
