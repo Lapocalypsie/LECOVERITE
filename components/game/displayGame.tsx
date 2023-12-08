@@ -1,3 +1,4 @@
+// @ts-ignore
 "use client";
 import Memory from "@/components/game/memory";
 import React, { useState, useEffect } from "react";
@@ -6,6 +7,7 @@ import Image from "next/image";
 
 const DisplayPage = () => {
   const [selectedGame, setSelectedGame] = useState(null);
+  // @ts-ignore
   const [konamiCode, setKonamiCode] = useState([]);
   const [konamiActivated, setKonamiActivated] = useState(false);
   const konamiSequence = [
@@ -21,11 +23,12 @@ const DisplayPage = () => {
     "a",
   ];
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     event.preventDefault();
-    console.log("Key event" + event.key);
+    console.log("Key event" + konamiCode);
     const key = event.key.toLowerCase();
 
+    // @ts-ignore
     setKonamiCode((prevCode) => {
       const updatedCode = [...prevCode, key];
 
@@ -52,7 +55,7 @@ const DisplayPage = () => {
     };
   }, []);
 
-  const selectGame = (game) => {
+  const selectGame = (game: any) => {
     setSelectedGame(game);
   };
 

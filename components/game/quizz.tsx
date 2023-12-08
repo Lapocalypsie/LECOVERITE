@@ -121,7 +121,7 @@ export default function App() {
 
   const [score, setScore] = useState(0);
 
-  const handleAnswerButtonClick = (isCorrect) => {
+  const handleAnswerButtonClick = (isCorrect: any) => {
     if (isCorrect === true) {
       alert("BONNE REPONSE !");
       setScore(score + 1);
@@ -130,7 +130,9 @@ export default function App() {
         (option) => option.isCorrect === true
       );
       alert(
-        `MAUVAISE REPONSE. La bonne réponse était : ${correctAnswer.answerText}`
+        `MAUVAISE REPONSE. La bonne réponse était : ${
+          correctAnswer!.answerText
+        }`
       );
     }
 
@@ -167,7 +169,7 @@ export default function App() {
               (answerOption, index) => (
                 <Button
                   key={index}
-                  className="hover:bg-light-80 text-black-500 block w-full rounded-md bg-light-400 p-3 focus:outline-none focus:ring"
+                  className=" block w-full rounded-md bg-light-400 p-3 hover:bg-light-800 focus:outline-none focus:ring"
                   onClick={() =>
                     handleAnswerButtonClick(answerOption.isCorrect)
                   }
