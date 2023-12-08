@@ -1,5 +1,6 @@
 "use client";
 
+import { randomInt } from "crypto";
 import React, { useState, useEffect } from "react";
 
 const regions = [
@@ -66,7 +67,8 @@ const Jeu = () => {
       const randomEvent = events[Math.floor(Math.random() * events.length)];
       setEvent(randomEvent);
 
-      const correctSolution = randomEvent.name;
+      const correctSolution =
+        solutions[Math.floor(Math.random() * solutions.length)];
       const incorrectSolutions = mauvaisesReponses
         .filter((incorrect) => incorrect !== correctSolution)
         .slice(0, 3);
@@ -75,7 +77,7 @@ const Jeu = () => {
         () => Math.random() - 0.5
       );
       setAnswers(shuffledAnswers);
-      setSolution([correctSolution]); // Reset solution when a new question is generated
+      setSolution([]);
     }
   }, [playerPosition, gameOver, gameWon]);
 
@@ -92,13 +94,24 @@ const Jeu = () => {
 
   const handleSolution = (selectedSolution) => {
     if (!gameOver && !gameWon) {
-      const correctSolution = event.name;
-      setSolution([selectedSolution]);
+      const correctSolution = solution[0];
+      setSolution([correctSolution]);
       if (selectedSolution === correctSolution) {
         setScore(score + 1);
       } else {
         setGameOver(true);
       }
+
+      const newIncorrectSolutions = mauvaisesReponses
+        .filter((incorrect) => incorrect !== correctSolution)
+        .slice(0, 3);
+
+      const newShuffledAnswers = [
+        correctSolution,
+        ...newIncorrectSolutions,
+      ].sort(() => Math.random() - 0.5);
+
+      setAnswers(newShuffledAnswers);
     }
   };
 
@@ -115,15 +128,15 @@ const Jeu = () => {
           <button
             key={index}
             onClick={() => handleSolution(a)}
-            className={`rounded ${
-              a === solution ? "bg-green-500" : "bg-blue-500"
+            className={`mt-2 h-12 rounded ${
+              a === solution[0] ? "bg-green-500" : "bg-blue-500"
             } px-4 py-2 font-bold text-white hover:bg-blue-700`}
           >
             {a}
           </button>
         ))}
       </div>
-      {solution && (
+      {solution[0] && (
         <>
           {gameOver && (
             <p className="mt-4 font-bold text-red-500">
@@ -138,7 +151,7 @@ const Jeu = () => {
           )}
           <button
             onClick={handleMove}
-            className="mt-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+            className="mb-4 mt-8 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
           >
             Question suivante
           </button>

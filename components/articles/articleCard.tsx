@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "@/styles/global.css";
+import "@/styles/scrollbar.css";
 import Link from "next/dist/client/link";
 
 export default function CardArticle(props: any) {
