@@ -2,7 +2,7 @@ import CardArticle from "@/components/articles/articleCard";
 
 export default function Page() {
   return (
-    <div className="mt-11 flex flex-wrap gap-4 max-sm:flex-col sm:items-center">
+    <div className="mt-11 mx-auto flex flex-wrap gap-4 max-sm:flex-col sm:items-center">
       <CardArticle
         link="https://reseauactionclimat.org/comprendre-urgence/"
         imageName="/assets/images/waterlevel.jpg"
