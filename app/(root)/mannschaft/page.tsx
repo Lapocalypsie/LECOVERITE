@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import LocalSearchBar from "@/components/shared/search/LocalSearchBar";
-import { getAllUsers, getUserById, getUsersByIds } from "@/lib/actions/user.action";
+import { getAllUsers, getUsersByIds } from "@/lib/actions/user.action";
 import UserCard from "@/components/cards/UserCard";
 import { SearchParamsProps } from "@/types";
 import Filter from "@/components/shared/Filter";
@@ -31,12 +31,14 @@ const Community = async ({ searchParams }: SearchParamsProps) => {
     "user_2ZEHhK4iMQxWm0ClDmFgUVzZVex",
     "user_2ZEMj3hAqAIpO5VGYc6Vi0fe3l6",
   ];
-  
+
   const users = await getUsersByIds(selectedUserIds);
   console.log(users);
   return (
     <>
-      <h1 className="h1-bold text-dark100_light900">Der Mannschaft : vous nous avez trouvés !</h1>
+      <h1 className="h1-bold text-dark100_light900">
+        Der Mannschaft : vous nous avez trouvés !
+      </h1>
 
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
         <LocalSearchBar
@@ -53,11 +55,13 @@ const Community = async ({ searchParams }: SearchParamsProps) => {
         />
       </div>
       <img
-        src="/assets/images/Manshaft.jpg"  // Replace with the actual path to your image
+        src="/assets/images/Manshaft.jpg" // Replace with the actual path to your image
         alt="Selected Users"
-        className="w-full max-w-screen-lg mx-auto mt-6 mb-4 rounded-lg"
+        className="mx-auto mb-4 mt-6 w-full max-w-screen-lg rounded-lg"
       />
-      <h2 className="h1-bold text-dark100_light900">Les profils de la Mannschaft :</h2>
+      <h2 className="h1-bold text-dark100_light900">
+        Les profils de la Mannschaft :
+      </h2>
       <section className="mt-12 flex flex-wrap gap-4">
         {result.users.length > 0 ? (
           result.users.map((user) => <UserCard key={user._id} user={user} />)
