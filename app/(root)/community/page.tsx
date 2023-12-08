@@ -27,7 +27,18 @@ const Community = async ({ searchParams }: SearchParamsProps) => {
 
   return (
     <>
+      <div className = "flex w-full flex-col-reverse justify-between gap-4 sm:flex-row ">
       <h1 className="h1-bold text-dark100_light900">Tout nos éconautes</h1>
+      <Link href="https://fr.wikipedia.org/wiki/%C3%89cologie" passHref>
+            <img
+              width={75}
+              src="/assets/images/solidarite.webp" 
+              alt="Solidarité"
+              style={{ cursor: 'pointer' }}
+            />
+            <h1>Solidarité</h1>
+        </Link>
+      </div>
 
       <div className="mt-11 flex justify-between gap-5 max-sm:flex-col sm:items-center">
         <LocalSearchBar

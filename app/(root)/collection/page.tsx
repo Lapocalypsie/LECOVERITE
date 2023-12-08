@@ -66,6 +66,5 @@ export default function Page() {
           description="La lutte contre le dérèglement climatique est l’un des défis majeurs du XXIe siècle, tant elle appelle à des transformations profondes des sociétés, des territoires et de l’économie mondiale."
         />
       </div>
-    </div>
   );
 }
