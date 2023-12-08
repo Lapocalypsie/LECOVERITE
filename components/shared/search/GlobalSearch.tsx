@@ -86,7 +86,7 @@ const GlobalSearch = () => {
             if (!isOpen) setIsOpen(true);
             if (e.target.value === "" && isOpen) setIsOpen(false);
           }}
-          placeholder="Search globally"
+          placeholder="Faire une recherche globale"
           className="paragraph-regular no-focus placeholder text-dark400_light700 border-none bg-transparent shadow-none outline-none"
         />
       </div>
