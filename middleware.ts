@@ -1,4 +1,4 @@
-/* import { authMiddleware } from "@clerk/nextjs";
+import { authMiddleware } from "@clerk/nextjs";
 
 // This example protects all routes including api/trpc routes
 // Please edit this to allow other routes to be public as needed.
@@ -18,16 +18,6 @@ export default authMiddleware({
   debug: true,
   ignoredRoutes: ["/api/webhook"],
 });
-
-// export const config = {
-//   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-// };
-export const config = {
-  matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
-}; */
-import { authMiddleware } from "@clerk/nextjs";
-
-export default authMiddleware();
 
 export const config = {
   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
