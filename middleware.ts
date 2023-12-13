@@ -15,6 +15,7 @@ export default authMiddleware({
     "/games",
     "/collection",
   ],
+  debug: true,
   ignoredRoutes: ["/api/webhook"],
 });
 
